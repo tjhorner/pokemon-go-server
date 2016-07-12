@@ -1,5 +1,7 @@
 # Unofficial Pokémon GO Server
 
+[![Gitter](https://badges.gitter.im/tjhorner/pokemon-go-server.svg)](https://gitter.im/tjhorner/pokemon-go-server?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+
 This repo is intended to be a place for an unofficial server for Niantic's GPS/AR game Pokémon GO.
 
 Problem is, we have no idea how the server communicates the client except...
