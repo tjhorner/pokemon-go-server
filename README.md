@@ -1,6 +1,6 @@
 # Unofficial Pokémon GO Server
 
-[![Gitter](https://badges.gitter.im/tjhorner/pokemon-go-server.svg)](https://gitter.im/tjhorner/pokemon-go-server?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
+[![Gitter](https://badges.gitter.im/tjhorner/pokemon-go-server.svg)](https://gitter.im/tjhorner/pokemon-go-server?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Slack](https://shielded-earth-81203.herokuapp.com/badge.svg)](https://shielded-earth-81203.herokuapp.com/badge.svg)
 
 This repo is intended to be a place for an unofficial server for Niantic's GPS/AR game Pokémon GO.
 
