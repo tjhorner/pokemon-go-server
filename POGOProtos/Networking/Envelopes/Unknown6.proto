@@ -1,0 +1,11 @@
+﻿syntax = "proto3";
+package POGOProtos.Networking.Envelopes;
+
+message Unknown6 {
+	int32 request_type = 1; //6
+	Unknown2 unknown2 = 2;
+
+	message Unknown2 {
+		bytes unknown1 = 1;
+	}
+}

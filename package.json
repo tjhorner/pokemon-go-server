@@ -1,0 +1,27 @@
+{
+  "name": "pokemon-go-server",
+  "version": "1.0.0",
+  "description": "[![Gitter](https://badges.gitter.im/tjhorner/pokemon-go-server.svg)](https://gitter.im/tjhorner/pokemon-go-server?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Slack](https://shielded-earth-81203.herokuapp.com/badge.svg)](https://shielded-earth-81203.herokuapp.com/badge.svg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tjhorner/pokemon-go-server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tjhorner/pokemon-go-server/issues"
+  },
+  "homepage": "https://github.com/tjhorner/pokemon-go-server#readme",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "concat-stream": "^1.5.1",
+    "express": "^4.14.0",
+    "http-proxy": "^1.14.0",
+    "int64": "0.0.5",
+    "protobufjs": "^5.0.1"
+  }
+}

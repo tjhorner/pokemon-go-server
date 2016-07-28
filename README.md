@@ -2,30 +2,48 @@
 
 [![Gitter](https://badges.gitter.im/tjhorner/pokemon-go-server.svg)](https://gitter.im/tjhorner/pokemon-go-server?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge) [![Slack](https://shielded-earth-81203.herokuapp.com/badge.svg)](https://shielded-earth-81203.herokuapp.com/badge.svg)
 
-This repo is intended to be a place for an unofficial server for Niantic's GPS/AR game Pokémon GO.
+This is a very incomplete and very badly written Pokemon GO server. I'm in the
+middle of creating it, so if you'd like to help then don't hesitate to send a
+PR!
 
-Problem is, we have no idea how the server communicates the client except...
+## Usage
 
-- It uses protobuf
-- The only game-related hostname the client contacts is `pgorelease.nianticlabs.com`
-- It sends all requests through `/plfe/{rpc_id?}/rpc`
-- Once authenticated, the server tells the client which RPC endpoint to send data to for the rest of the session
-- The request/response data is broken up into multiple protobuf descriptors:
-  - `bridge.proto`
-  - `clientrpc.proto`
-  - `gmm_layer_rule.proto`
-  - `gmm_pref.proto`
-  - `gmm_settings.proto`
-  - `in_app_purchases.proto`
-  - `map.proto`
-  - `platform_actions.proto`
-  - `signals.proto`
-  - `auth/niantic_token.proto`
-  - `fortdetails.proto`
-  - `gymbattlev2.proto`
-  - `holoholo_shared.proto`
-  - `inventory.proto`
-  - `rpc.proto`
-  - `sfida_device.proto`
+`npm install && node index`
 
-If you'd like to help us in decoding the protobuf descriptor, [join the Gitter chat](https://gitter.im/tjhorner/pokemon-go-server)!
+Then get some proxy that you can connect your phone to (I use Fiddler), and forward
+all requests from `pgorelease.nianticlabs.com` to `localhost:3000`. It doesn't
+matter what endpoint you send it to, it listens for POSTs everywhere.
+
+## Supported RPC Requests
+
+Most of these are incomplete and are just for testing.
+
+- GetPlayer
+- GetHatchedEggs
+- GetInventory
+- CheckAwardedBadges
+- DownloadSettings
+- DownloadRemoteConfigVersion
+- GetAssetDigest
+- GetPlayerProfile
+- GetMapObjects
+- MarkTutorialComplete
+- SetAvatar
+- GetDownloadUrls
+- FortDetails
+
+## Known Issues
+
+What's an issue tracker anyway?
+
+- Client doesn't respond to GetPlayer message correctly (we're probably sending it wrong)
+  - Name doesn't appear
+  - XP doesn't appear
+  - Team isn't set correctly
+  - Black box in player profile screen
+- Client freezes after selecting a Pokestop sent by server
+- Various other things
+
+## Todo
+
+- Don't put every response in a single file...
