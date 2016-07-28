@@ -225,23 +225,7 @@ var answerRequests = (requests, authTicket)=>{
           cellsRes.push(new proto.Map.MapCell({
             s2_cell_id: cell,
             current_timestamp_ms: new Date().getTime() * 1000,
-            forts: [
-              new proto.Map.Fort.FortData({
-                id: "goodfort",
-                last_modified_timestamp_ms: new Date().getTime() * 1000,
-                latitude: 33.108770,
-                longitude: -117.244344,
-                owned_by_team: 3,
-                guard_pokemon_id: 150,
-                guard_pokemon_cp: 2000,
-                gym_points: 100000,
-                is_in_battle: false,
-                enabled: true,
-                type: proto.Map.Fort.FortType.GYM,
-                sponsor: proto.Map.Fort.FortSponsor.MCDONALDS,
-                rendering_type: proto.Map.Fort.FortRenderingType.DEFAULT
-              })
-            ],
+            forts: [ ],
             spawn_points: [ ],
             deleted_objects: [ ],
             is_truncated_list: false,
@@ -258,7 +242,7 @@ var answerRequests = (requests, authTicket)=>{
           map_cells: cellsRes
         }).encode());
         break;
-      case 406: // 
+      case 406: // MarkTutorialComplete
         returns.push(new proto.Networking.Responses.MarkTutorialCompleteResponse({
           success: true,
           player_data: playerData
@@ -295,9 +279,6 @@ app.post("/*", function(req, res){
   try{
     var protoReq = RequestEnvelope.decode(req.body);
     console.log(protoReq);
-    // if(protoReq.unknown6){
-    //   // console.log(protoReq.unknown6.unknown2.unknown1.toBuffer().toString());
-    // }
     if(isFirstRequest){
       isFirstRequest = false;
       res.send(new ResponseEnvelope({
@@ -326,8 +307,6 @@ app.post("/*", function(req, res){
       res.send(envelopResponse(1, protoReq.request_id, answerRequests(protoReq.requests, authTicket), includeAuthTicketInRes, protoReq.unknown6));
     }
   }catch(e){
-    console.log("ERROR! VERY BAD NO BUENO REEEEE", e);
-    // console.log("Client sent bad request. Is your proxy set up properly?");
     res.send("BAD.");
   }
 });
