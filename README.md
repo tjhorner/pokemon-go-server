@@ -14,7 +14,7 @@ Then get some proxy that you can connect your phone to (I use Fiddler), and forw
 all requests from `pgorelease.nianticlabs.com` to `localhost:3000`. It doesn't
 matter what endpoint you send it to, it listens for POSTs everywhere.
 
-[Guide for Fiddler here](https://github.com/tjhorner/pokemon-go-server/issues/4#issuecomment-236457082)
+[Guide for Fiddler here](https://github.com/tjhorner/pokemon-go-server/wiki/Fiddler-Instructions)
 
 ## Supported RPC Requests
 
